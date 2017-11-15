@@ -19,6 +19,9 @@ export default {
   replace: true,
   name: 'vue-draggable-resizable',
   props: {
+    cancel:{
+      type:Boolean,default:true
+    },
     active: {
       type: Boolean, default: false
     },
@@ -203,8 +206,8 @@ export default {
     deselect: function (e) {
       const target = e.target || e.srcElement
       const regex = new RegExp('handle-([trmbl]{2})', '')
-
-      if (!this.$el.contains(target) && !regex.test(target.className)) {
+      
+      if (this.cancel&&!this.$el.contains(target) && !regex.test(target.className)) {
         if (this.enabled) {
           this.enabled = false
 
