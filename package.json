@@ -1,6 +1,6 @@
 {
   "name": "vue-draggable-resizable",
-  "version": "1.5.2",
+  "version": "1.5.4",
   "description": "Vue2 Component for resizable and draggable elements",
   "author": "Maurizio Bonani <maurizio.bonani@gmail.com>",
   "main": "dist/index.js",
@@ -11,24 +11,16 @@
     "build": "rm -rf dist && webpack --config build/webpack.dist.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
-    "prepublish": "npm run test; npm run build",
     "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mauricius/vue-draggable-resizable.git"
+    "url": "https://github.com/cuo9958/vue-draggable-resizable"
+  },
+  "publishConfig": {
+    "registry": "http://npm-registry.corp.daling.com"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mauricius/vue-draggable-resizable/issues"
-  },
-  "homepage": "https://github.com/mauricius/vue-draggable-resizable",
-  "keywords": [
-    "vue",
-    "component",
-    "dragabble",
-    "resizable"
-  ],
   "peerDependencies": {
     "vue": "^2.5.3"
   },
