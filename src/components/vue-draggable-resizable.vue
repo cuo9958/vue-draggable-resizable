@@ -169,10 +169,14 @@ export default {
   },
   data: function() {
     return {
-      top: this.y,
+      /*top: this.y,
       left: this.x,
       width: this.w,
-      height: this.h,
+      height: this.h,*/
+      xs: this.x,
+      ys: this.y,
+      widths: this.w,
+      heights: this.h,
       resizing: false,
       dragging: false,
       enabled: this.active,
@@ -414,6 +418,38 @@ export default {
         height: this.height + "px",
         zIndex: this.zIndex
       };
+    },
+    top: {
+      set: function(newValue) {
+        this.ys = newValue
+      },
+      get: function() {
+        return this.ys
+      }
+    },
+    left: {
+      set: function(newValue) {
+        this.xs = newValue
+      },
+      get: function() {
+        return this.xs
+      }
+    },
+    width: {
+      set: function(newValue) {
+        this.widths = newValue
+      },
+      get: function() {
+        return this.widths
+      }
+    },
+    height: {
+      set: function(newValue) {
+        this.heights = newValue
+      },
+      get: function() {
+        return this.heights
+      }
     }
   },
   watch: {
@@ -424,6 +460,18 @@ export default {
       if (val >= 0 || val === "auto") {
         this.zIndex = val;
       }
+    },
+    x: function(val) {
+      this.xs = val
+    },
+    y: function(val) {
+      this.ys = val
+    },
+    w: function(val) {
+      this.widths = val
+    },
+    h: function(val) {
+      this.heights = val
     }
   }
 };
