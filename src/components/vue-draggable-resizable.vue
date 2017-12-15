@@ -463,15 +463,19 @@ export default {
     },
     x: function(val) {
       this.xs = val
+      this.elmX = val
     },
     y: function(val) {
       this.ys = val
+      this.elmY = val
     },
     w: function(val) {
       this.widths = val
+      this.elmW = val
     },
     h: function(val) {
       this.heights = val
+      this.elmH = val
     }
   }
 };
