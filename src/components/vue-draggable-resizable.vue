@@ -217,6 +217,10 @@ export default {
       if (this.$el.contains(target)) {
         if (!this.enabled) {
           this.enabled = true;
+          this.elmX = this.left;
+          this.elmY = this.top;
+          this.elmW = this.width;
+          this.elmH = this.height;
 
           this.$emit("activated");
           this.$emit("update:active", true);
@@ -463,19 +467,15 @@ export default {
     },
     x: function(val) {
       this.xs = val
-      this.elmX = val
     },
     y: function(val) {
       this.ys = val
-      this.elmY = val
     },
     w: function(val) {
       this.widths = val
-      this.elmW = val
     },
     h: function(val) {
       this.heights = val
-      this.elmH = val
     }
   }
 };
