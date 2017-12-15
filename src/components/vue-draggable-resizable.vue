@@ -217,6 +217,10 @@ export default {
       if (this.$el.contains(target)) {
         if (!this.enabled) {
           this.enabled = true;
+          this.elmX = this.left;
+          this.elmY = this.top;
+          this.elmW = this.width;
+          this.elmH = this.height;
 
           this.$emit("activated");
           this.$emit("update:active", true);
